@@ -9,6 +9,6 @@ get '/' do
 end
 
 get '/css/trends.css' do
-	header 'Content-Type' => 'text/css; charset=utf-8'
+  content_type 'text/css', :charset => 'utf-8'
 	sass :trends
 end

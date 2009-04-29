@@ -1,1 +1,14 @@
-images here
+#trends
+  current trends
+  %ol
+    - @trends.each do |t|
+      %li
+        %a{:href => t['url']}= t['name']
+  == last updated #{@updated}
+
+#images
+  %ol
+    - @trends.each do |t|
+      %li
+        %a{:href => t['url']}
+          %img{:src => t['img'], :alt => t['name'], :title => t['name']}

@@ -3,8 +3,13 @@
 require 'rubygems'
 require 'sinatra'
 require 'haml'
+require 'json'
 
 get '/' do
+  file = File.expand_path(File.dirname(__FILE__)) + '/var/trends.json'
+  json = JSON.parse(File.read(file))
+  @trends = json['trends']
+  @updated = json['as_of']
 	haml :index
 end
 

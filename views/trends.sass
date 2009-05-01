@@ -1,37 +1,74 @@
-=border
-  border: 1px solid black
+// constants 
+
+!white = #FFFFFF
+!black = #000000
+!grey = #EEEEEE
+!darker_grey = #CCCCCC
+!blue = #497BB6
+!main_width = 405px
+
+// mixins
+
+=rounded_border
+  border: 1px solid
+    color = !darker_grey
+  -moz-border-radius: 10px
+  -webkit-border-radius: 10px
+
+// main
 
 body
   font-family: Arial,'Lucida Grande',sans-serif
 
+a
+  text-decoration: none
+  color = !blue
+  &:hover
+    color = !black
+
 #wrapper
-  width: 600px
-  margin: 30px auto
+  width = !main_width
+  margin: 60px auto
 
 #header
   padding: 10px
-  border-bottom: 1px solid black
-  a
-    text-decoration: none
+  border-bottom: 1px solid
+    color = !darker_grey
 
 #footer
   padding: 10px
   clear: left
   text-align: right
-  border-top: 1px solid black
+  border-top: 1px solid
+    color = !darker_grey
 
 #content
+  +rounded_border
   float: left
   margin: 20px 10px
+  padding: 15px 20px
+  width = !main_width - 62px
+  background = !grey
 
 #trends
-  +border
+  +rounded_border
+  background = !white
   width: 150px
+  padding: 5px 10px
+  margin: 90px 0 0
   float: left
+  
+  ol
+    margin: 5px 0
 
 #images
-  +border
-  float: left
-  margin: 0 0 0 30px
+  +rounded_border
+  background = !white
+  padding: 5px 10px
+  float: right
   height: 400px
   overflow: hidden
+
+  img
+    display: block
+    margin: 0 auto

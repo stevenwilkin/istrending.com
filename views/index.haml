@@ -5,7 +5,8 @@
       %li
         &middot; 
         %a{:href => t['url'], :title => "search twitter for '#{t['name']}'"}= t['name']
-  == last updated #{@updated}
+  last updated
+  %span{:title => @updated_full}= @updated
 
 #images
   %ol

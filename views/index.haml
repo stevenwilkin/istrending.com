@@ -3,7 +3,8 @@
   %ol
     - @trends.each do |t|
       %li
-        %a{:href => t['url']}= t['name']
+        &middot; 
+        %a{:href => t['url'], :title => "search twitter for '#{t['name']}'"}= t['name']
   == last updated #{@updated}
 
 #images
@@ -11,4 +12,4 @@
     - @trends.each do |t|
       %li
         %a{:href => t['url']}
-          %img{:src => t['img'], :alt => t['name'], :title => t['name']}
+          %img{:src => t['img'], :alt => t['name'], :title => "search twitter for '#{t['name']}'"}

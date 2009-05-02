@@ -8,6 +8,8 @@
     %meta{:name => 'description', :content => ''}
     %link{:type => 'text/css', :rel => 'stylesheet', :href => '/css/reset.css'}
     %link{:type => 'text/css', :rel => 'stylesheet', :href => '/css/trends.css'}
+    - ['jquery', 'trends'].each do |j|
+      %script{:type => 'text/javascript', :src => "/js/#{j}.js"}
 
   %body
 

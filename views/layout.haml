@@ -6,9 +6,9 @@
     %title
       twitter trends seen through the eyes of google images
     %meta{:name => 'description', :content => ''}
-    - ['reset', 'trends'].each do |c|
+    - ['reset', 'jquery.jcarousel', 'trends'].each do |c|
       %link{:type => 'text/css', :rel => 'stylesheet', :href => "/css/#{c}.css"}
-    - ['jquery', 'trends'].each do |j|
+    - ['jquery', 'jquery.jcarousel.pack', 'trends'].each do |j|
       %script{:type => 'text/javascript', :src => "/js/#{j}.js"}
 
   %body

@@ -12,8 +12,8 @@ RESULTS	= 'trends.json'
 
 # peforms a google image search for `q` and returns the url of the first image returned
 def image_search(q)
-	q.gsub!(/[\W]/, '+')
-	open(SEARCH + q) do |f|
+	term = q.gsub(/[\W]/, '+')
+	open(SEARCH + term) do |f|
 		return nil unless f.status[0] == '200'
 		h = Hpricot(f.read)
 		h.at('#ImgCont//img')['src']

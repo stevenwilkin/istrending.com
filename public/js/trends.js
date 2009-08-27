@@ -10,7 +10,7 @@ function itemVisibleOut(carousel, item, i, state, evt){
 
 $(document).ready(function(){
 	$('#images ol').hide();
-	$('#images').append('<ul id="carousel" class="jcarousel-skin-tango">');
+	$('#images-clip').append('<ul id="carousel" class="jcarousel-skin-tango">');
 	$('#carousel').jcarousel({
 		vertical: true,
 		scroll: 1,

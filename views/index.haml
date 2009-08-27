@@ -4,13 +4,14 @@
     - @trends.each do |t|
       %li
         &middot; 
-        %a{:href => t['url'], :title => "search twitter for '#{t['name']}'"}= t['name']
+        %a{:href => t['url'], :title => "search twitter for '#{t['name']}'"}= t['name'].gsub(/%23/, '#')
   last updated
   %span{:title => @updated_full}= @updated
 
 #images
-  %ol
-    - @trends.each do |t|
-      %li
-        %a{:href => t['url']}
-          %img{:src => t['img'], :alt => t['name'], :title => "search twitter for '#{t['name']}'"}
+  #images-clip
+    %ol
+      - @trends.each do |t|
+        %li
+          %a{:href => t['url']}
+            %img{:src => t['img'], :alt => t['name'], :title => "search twitter for '#{t['name']}'"}

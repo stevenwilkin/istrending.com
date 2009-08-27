@@ -13,7 +13,6 @@ set :git_path_prefix, "git@github.com:stevenwilkin"
 set :repository, "#{git_path_prefix}/#{application}.git" 
 set :scm, 'git'
 set :branch, 'master'
-set :scm_verbose, true
 
 # deploying to Passenger so app is restarted by touching tmp/restart.txt
 namespace :deploy do

@@ -22,3 +22,11 @@ namespace :deploy do
 		run "touch #{current_path}/tmp/restart.txt"
 	end
 end
+
+# ensure data is available for the app after deployment
+desc "Get Trend Data"
+task :get_trends do
+  run "#{current_path}/lib/get_trends.rb"
+end
+
+after "deploy", "get_trends"

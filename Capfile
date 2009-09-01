@@ -29,4 +29,4 @@ task :get_trends do
   run "#{current_path}/lib/get_trends.rb"
 end
 
-after "deploy", "get_trends"
+before "deploy:restart", "get_trends"

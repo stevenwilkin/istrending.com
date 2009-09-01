@@ -9,6 +9,21 @@ function localiseTimestamp(){
 
 
 /**
+ * initialse Google Analytics
+ * don't force the browser to wait until  ga script loaded before running the rest of th js
+ */
+function initAnalytics(){
+	var accountId = 'UA-2764682-9';
+	jQuery.getScript('http://www.google-analytics.com/ga.js', function(){
+		try {
+			var pageTracker = _gat._getTracker(accountId);
+			pageTracker._trackPageview();
+		} catch(err) {}
+	});
+}
+
+
+/**
  * jCarousel
  */
 function itemVisibleIn(carousel, item, i, state, evt){
@@ -40,4 +55,5 @@ function initCarousel(){
 $(document).ready(function(){
 	localiseTimestamp();
 	initCarousel();
+	initAnalytics();
 });

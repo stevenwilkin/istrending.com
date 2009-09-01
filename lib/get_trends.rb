@@ -12,11 +12,16 @@ RESULTS	= File.dirname(__FILE__) + '/../var/trends.json'
 
 # peforms a google image search for `q` and returns the url of the first image returned
 def image_search(q)
-	term = q.gsub(/[\W]/, '+')
+	term = q.gsub(/#/, '').gsub(/[\W]/, '+')
 	open(SEARCH + term) do |f|
 		return nil unless f.status[0] == '200'
 		h = Hpricot(f.read)
-		h.at('#ImgCont//img')['src']
+		# in the rare case there are no results...
+		if (i = h.at('#ImgCont//img'))
+		  i['src']
+		else
+          'http://tbn0.google.com/images?q=tbn:WgkIHy0O9DyKJM:http://www.kreiseder.at/wp-content/2008/07/lolcat404.png'
+		end
 	end
 end
 

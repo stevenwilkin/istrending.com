@@ -11,7 +11,7 @@ get '/' do
   json = JSON.parse(File.read(file))
   @trends = json['trends']
   @updated_full = json['as_of']
-  @updated = DateTime.parse(@updated_full).strftime('%H:%S')
+  @updated = DateTime.parse(@updated_full).strftime('%H:%M')
 	haml :index
 end
 

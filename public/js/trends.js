@@ -1,4 +1,14 @@
 /**
+ * use the users browser to localise the 'last updated' field from UTC
+ */
+function localiseTimestamp(){
+	var d = new Date($('#trends span').attr('title'));
+	var pd = d.getHours() + ':' + d.getMinutes();
+	$('#trends span').html(pd);
+}
+
+
+/**
  * jCarousel
  */
 function itemVisibleIn(carousel, item, i, state, evt){
@@ -28,5 +38,6 @@ function initCarousel(){
 
 
 $(document).ready(function(){
+	localiseTimestamp();
 	initCarousel();
 });

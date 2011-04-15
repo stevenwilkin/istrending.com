@@ -7,7 +7,7 @@ require 'json'
 
 # `gbv=1` causes finshed html page to be returned instead of a huge amount of javascript
 SEARCH	= 'http://images.google.com/images?gbv=1&q='
-TRENDS	= 'http://search.twitter.com/trends.json'
+TRENDS	= 'http://api.twitter.com/1/trends.json'
 RESULTS	= File.dirname(__FILE__) + '/../var/trends.json'
 
 # peforms a google image search for `q` and returns the url of the first image returned
